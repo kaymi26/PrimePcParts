@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime PC Parts</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+</head>
+
+<body>
+    <div class="intro">
+        <h1>Prime PC Parts</h1>
+    </div>
+
+    <header>
+        <nav>
+            <ul class="center-nav">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="#additional-content">Category</a></li>
+                <li>
+                    <div class="search-container">
+                        <input type="text" id="searchBox" placeholder="Search for a product...">
+                        <div id="suggestions" class="suggestions-box"></div> <!-- Suggestions appear here -->
+                        <button onclick="searchProduct(document.getElementById('searchBox').value)">Search</button>
+                    </div>
+                </li>
+            </ul>
+
+            <nav>
+                <ul class="left-nav">
+                    <li><a href="#CPU">CPU</a></li>
+                    <li><a href="#GPUs">GPU</a></li>
+                    <li><a href="#Motherboards">MOBO</a></li>
+                    <li><a href="#Monitors">MONITOR</a></li>
+                </ul>
+
+                <ul class="cart-nav">
+                    <li>
+                        <a href="cart.html" id="cartButton">
+                            🛒 
+                        </a>
+                    </li>
+                </ul>
+
+                <ul class="right-nav">
+                    <li><a href="#">Sign In</a></li>
+                    <li><a href="#">Sign Up</a></li>
+                </ul>
+            </nav>
+    </header>
+
+
+    <div class="product-container">
+        <div class="product-box"
+            onclick="openProductForm('Intel Core i9', 'corei9.webp', 'High-performance CPU', ['Intel Core i7', 'Intel Core i5', 'AMD Ryzen 9', 'Apple M3'])">
+            <img src="corei9.webp" alt="Intel Core i9">
+            <p>Intel Core i9</p>
+            <p>₱25,000</p>
+        </div>
+
+        <div class="product-box"
+            onclick="openProductForm('Intel Core i7', 'corei7.avif', 'Fast and efficient CPU', ['Intel Core i9', 'Intel Core i5', 'AMD Ryzen 9', 'Apple M3'])">
+            <img src="corei7.avif" alt="Intel Core i7">
+            <p>Intel Core i7</p>
+            <p>₱20,000</p>
+        </div>
+
+        <div class="product-box"
+            onclick="openProductForm('Intel Core i5', 'corei5.webp', 'Mid-range processor for everyday tasks', ['Intel Core i7', 'AMD Ryzen 9', 'Apple M3', 'Intel Core i9'])">
+            <img src="corei5.webp" alt="Intel Core i5">
+            <p>Intel Core i5</p>
+            <p>₱15,000</p>
+        </div>
+
+        <div class="product-box"
+            onclick="openProductForm('AMD Ryzen 9', 'ryzen9.avif', 'Powerful gaming processor', ['Intel Core i9', 'Intel Core i7', 'Apple M3', 'Intel Core i5'])">
+            <img src="ryzen9.avif" alt="AMD Ryzen 9">
+            <p>AMD Ryzen 9</p>
+            <p>₱27,000</p>
+        </div>
+
+        <div class="product-box"
+            onclick="openProductForm('Apple M3', 'applem3.webp', 'Advanced Apple silicon for seamless performance', ['Intel Core i9', 'AMD Ryzen 9', 'Intel Core i7', 'Intel Core i5'])">
+            <img src="applem3.webp" alt="Apple M3">
+            <p>Apple M3</p>
+            <p>₱30,000</p>
+        </div>
+
+        <div class="product-box"
+            onclick="openProductForm('Nvidia RTX 4090', 'rtx4090.png', 'Ultimate graphics power', ['AMD RX 7900', 'Intel Arc GPU', 'AMD RX 7800 XT', 'Nvidia RTX 4080'])">
+            <img src="rtx4090.png" alt="Nvidia RTX 4090">
+            <p>Nvidia RTX 4090</p>
+            <p>₱45,000</p>
+        </div>
+
+        <div class="product-box"
+            onclick="openProductForm('AMD RX 7900', 'rx7900.webp', 'High-end AMD graphics solution', ['Nvidia RTX 4090', 'Intel Arc GPU', 'AMD RX 7800 XT', 'Nvidia RTX 4080'])">
+            <img src="rx7900.webp" alt="AMD RX 7900">
+            <p>AMD RX 7900</p>
+            <p>₱35,000</p>
+        </div>
+
+        <div class="product-box"
+            onclick="openProductForm('Intel Arc GPU', 'intelarc.png', 'Intel’s discrete gaming GPU', ['Nvidia RTX 4090', 'AMD RX 7900', 'AMD RX 7800 XT', 'Nvidia RTX 4080'])">
+            <img src="intelarc.png" alt="Intel Arc GPU">
+            <p>Intel Arc GPU</p>
+            <p>₱25,000</p>
+        </div>
+
+        <div class="product-box"
+            onclick="openProductForm('ASUS ROG Motherboard', 'rogmobo.png', 'High-performance gaming motherboard', ['MSI Gaming Motherboard', 'Gigabyte Motherboard', 'ASRock X670E Taichi', 'EVGA Z690 Dark'])">
+            <img src="rogmobo.png" alt="ASUS ROG Motherboard">
+            <p>ASUS ROG Motherboard</p>
+            <p>₱12,000</p>
+        </div>
+
+        <div class="product-box"
+            onclick="openProductForm('MSI Gaming Motherboard', 'msimobo.webp', 'Reliable motherboard for gaming', ['ASUS ROG Motherboard', 'Gigabyte Motherboard', 'ASRock X670E Taichi', 'EVGA Z690 Dark'])">
+            <img src="msimobo.webp" alt="MSI Gaming Motherboard">
+            <p>MSI Gaming Motherboard</p>
+            <p>₱12,000</p>
+        </div>
+
+        <div class="product-box"
+            onclick="openProductForm('Gigabyte Motherboard', 'gigabyte.webp', 'Versatile motherboard with advanced features', ['ASRock X670E Taichi', 'ASUS ROG Motherboard', 'EVGA Z690 Dark', 'MSI Gaming Motherboard'])">
+            <img src="gigabyte.webp" alt="Gigabyte Motherboard">
+            <p>Gigabyte Motherboard</p>
+            <p>₱9,000</p>
+        </div>
+
+        <div class="product-box"
+            onclick="openProductForm('ASUS Gaming Monitor', 'asusmoni.png', 'Smooth display for competitive gaming', ['Acer Predator', 'Dell Ultrasharp', 'LG UltraGear', 'Samsung Odyssey G9'])">
+            <img src="asusmoni.png" alt="ASUS Gaming Monitor">
+            <p>ASUS Gaming Monitor</p>
+            <p>₱15,000</p>
+        </div>
+
+        <div class="product-box"
+            onclick="openProductForm('Acer Predator', 'acerpredator.webp', 'High-refresh-rate gaming monitor', ['ASUS Gaming Monitor', 'Dell Ultrasharp', 'Samsung Odyssey G9', 'LG UltraGear', ])">
+            <img src="acerpredator.webp" alt="Acer Predator">
+            <p>Acer Predator</p>
+            <p>₱13,000</p>
+        </div>
+
+        <div class="product-box"
+            onclick="openProductForm('Dell Ultrasharp', 'dellultrasharp.png', 'Professional-grade display for crisp visuals', ['ASUS Gaming Monitor', 'Acer Predator', 'LG UltraGear', 'Samsung Odyssey G9'])">
+            <img src="dellultrasharp.png" alt="Dell Ultrasharp">
+            <p>Dell Ultrasharp</p>
+            <p>₱14,000</p>
+        </div>
+
+        <div class="product-box"
+            onclick="openProductForm('LG UltraGear', 'lgultragear.png', 'Ultra-fast gaming monitor with premium visuals', ['ASUS Gaming Monitor', 'Acer Predator', 'Dell Ultrasharp', 'Samsung Odyssey G9'])">
+            <img src="lgultragear.png" alt="LG UltraGear">
+            <p>LG UltraGear</p>
+            <p>₱15,000</p>
+        </div>
+    </div>
+
+
+
+    <div class="ads">
+        <a
+            onclick="openProductForm('Exclusive Offer 50% off', 'ads1.png', 'Limited-time deal with huge discounts!', ['Limited Deal, BUY NOW', '60% OFF NOW'])">
+            <img src="ads1.png" alt="Product 1">
+            <p class="ads-text">Exclusive Offer 50% off !!!</p>
+        </a>
+        <a
+            onclick="openProductForm('Limited Deal, BUY NOW', 'ads2.webp', 'Flash sale! Get amazing tech at incredible prices.', ['Exclusive Offer 50% off', '60% OFF NOW'])">
+            <img src="ads2.webp" alt="Product 2">
+            <p class="ads-text">Limited Deal, BUY NOW !!!</p>
+        </a>
+        <a
+            onclick="openProductForm('60% OFF NOW', 'ads3.png', 'Massive discount for a short time only!', ['Exclusive Offer 50% off', 'Limited Deal, BUY NOW'])">
+            <img src="ads3.png" alt="Product 3">
+            <p class="ads-text">60% OFF NOW!!!</p>
+        </a>
+    </div>
+
+
+    <!-- 2nd page/ New Page Below -->
+    <section id="additional-content">
+        <section id="CPU">
+            <h2 class="category-title">CPU PRODUCTS</h2>
+            <div class="cpu-container">
+                <div class="cpu-item"
+                    onclick="openProductForm('Intel Core i9', 'corei9.webp', 'High-performance CPU', ['Intel Core i7', 'Intel Core i5', 'AMD Ryzen 9', 'Apple M3'])">
+                    <img src="corei9.webp" alt="Intel Core i9">
+                    <p>Intel Core i9</p>
+                </div>
+
+                <div class="cpu-item"
+                    onclick="openProductForm('Intel Core i7', 'corei7.webp', 'Fast and efficient CPU', ['Intel Core i9', 'Intel Core i5', 'AMD Ryzen 9', 'Apple M3'])">
+                    <img src="corei7.avif" alt="Intel Core i7">
+                    <p>Intel Core i7</p>
+                </div>
+
+                <div class="cpu-item"
+                    onclick="openProductForm('Intel Core i5', 'corei5.webp', 'Mid-range processor for everyday tasks', ['Intel Core i7', 'AMD Ryzen 9', 'Apple M3', 'Intel Core i9'])">
+                    <img src="corei5.webp" alt="Intel Core i5">
+                    <p>Intel Core i5</p>
+                </div>
+
+                <div class="cpu-item"
+                    onclick="openProductForm('AMD Ryzen 9', 'ryzen9.avif', 'Powerful gaming processor', ['Intel Core i9', 'Intel Core i7', 'Apple M3', 'Intel Core i5'])">
+                    <img src="ryzen9.avif" alt="AMD Ryzen 9">
+                    <p>AMD Ryzen 9</p>
+                </div>
+
+                <div class="cpu-item"
+                    onclick="openProductForm('Apple M3', 'apple-m3.png', 'Advanced Apple silicon for seamless performance', ['Intel Core i9', 'AMD Ryzen 9', 'Intel Core i7', 'Intel Core i5'])">
+                    <img src="applem3.webp" alt="Apple M3">
+                    <p>Apple M3</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="GPUs">
+            <h2 class="category-title">GRAPHICS CARDS</h2>
+            <div class="gpu-container">
+                <div class="gpu-item"
+                    onclick="openProductForm('Nvidia RTX 4090', 'rtx4090.png', 'Ultimate graphics power', ['AMD RX 7900', 'Intel Arc GPU', 'AMD RX 7800 XT', 'Nvidia RTX 4080'])">
+                    <img src="rtx4090.png" alt="Nvidia RTX 4090">
+                    <p>Nvidia RTX 4090</p>
+                </div>
+                <div class="gpu-item"
+                    onclick="openProductForm('AMD RX 7900', 'rx7900.webp', 'High-end AMD graphics solution', ['Nvidia RTX 4090', 'Intel Arc GPU', 'AMD RX 7800 XT', 'Nvidia RTX 4080'])">
+                    <img src="rx7900.webp" alt="AMD RX 7900">
+                    <p>AMD RX 7900</p>
+                </div>
+                <div class="gpu-item"
+                    onclick="openProductForm('Intel Arc GPU', 'intelarc.png', 'Intel’s discrete gaming GPU', ['Nvidia RTX 4090', 'AMD RX 7900', 'AMD RX 7800 XT', 'Nvidia RTX 4080'])">
+                    <img src="intelarc.png" alt="Intel Arc GPU">
+                    <p>Intel Arc GPU</p>
+                </div>
+                <div class="gpu-item"
+                    onclick="openProductForm('AMD RX 7800 XT', 'rx7800xt.png', 'Powerful AMD GPU for gaming', ['Nvidia RTX 4090', 'AMD RX 7900', 'Intel Arc GPU', 'Nvidia RTX 4080'])">
+                    <img src="rx7800xt.png" alt="AMD RX 7800 XT">
+                    <p>AMD RX 7800 XT</p>
+                </div>
+                <div class="gpu-item"
+                    onclick="openProductForm('Nvidia RTX 4080', 'rtx4080.webp', 'High-end Nvidia graphics powerhouse', ['Nvidia RTX 4090', 'AMD RX 7900', 'Intel Arc GPU', 'AMD RX 7800 XT'])">
+                    <img src="rtx4080.webp" alt="Nvidia RTX 4080">
+                    <p>Nvidia RTX 4080</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="Motherboards">
+            <h2 class="category-title">MOTHERBOARDS</h2>
+            <div class="mobo-container">
+                <div class="mobo-item"
+                    onclick="openProductForm('ASUS ROG Motherboard', 'rogmobo.png', 'High-performance gaming motherboard', ['MSI Gaming Motherboard', 'Gigabyte Motherboard', 'ASRock X670E Taichi', 'EVGA Z690 Dark'])">
+                    <img src="rogmobo.png" alt="ASUS ROG Motherboard">
+                    <p>ASUS ROG Motherboard</p>
+                </div>
+                <div class="mobo-item"
+                    onclick="openProductForm('MSI Gaming Motherboard', 'msimobo.webp', 'Reliable motherboard for gaming', ['ASUS ROG Motherboard', 'Gigabyte Motherboard', 'ASRock X670E Taichi', 'EVGA Z690 Dark'])">
+                    <img src="msimobo.webp" alt="MSI Gaming Motherboard">
+                    <p>MSI Gaming Motherboard</p>
+                </div>
+                <div class="mobo-item"
+                    onclick="openProductForm('Gigabyte Motherboard', 'gigabyte.webp', 'Durable motherboard with advanced connectivity', ['ASUS ROG Motherboard', 'MSI Gaming Motherboard', 'ASRock X670E Taichi', 'EVGA Z690 Dark'])">
+                    <img src="gigabyte.webp" alt="Gigabyte Motherboard">
+                    <p>Gigabyte Motherboard</p>
+                </div>
+                <div class="mobo-item"
+                    onclick="openProductForm('ASRock X670E Taichi', 'asrockx670e.webp', 'Premium ASRock motherboard with extreme performance', ['ASUS ROG Motherboard', 'MSI Gaming Motherboard', 'Gigabyte Motherboard', 'EVGA Z690 Dark'])">
+                    <img src="asrockx670e.webp" alt="ASRock X670E Taichi">
+                    <p>ASRock X670E Taichi</p>
+                </div>
+                <div class="mobo-item"
+                    onclick="openProductForm('EVGA Z690 Dark', 'evgaz690.png', 'High-performance EVGA motherboard for enthusiasts', ['ASUS ROG Motherboard', 'MSI Gaming Motherboard', 'Gigabyte Motherboard', 'ASRock X670E Taichi'])">
+                    <img src="evgaz690.png" alt="EVGA Z690 Dark">
+                    <p>EVGA Z690 Dark</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="Monitors">
+            <h2 class="category-title">MONITORS & DISPLAYS</h2>
+            <div class="monitor-container">
+                <div class="monitor-item"
+                    onclick="openProductForm('ASUS Gaming Monitor', 'asusmoni.png', 'Smooth display for competitive gaming', ['Acer Predator', 'Dell Ultrasharp', 'LG UltraGear', 'Samsung Odyssey G9'])">
+                    <img src="asusmoni.png" alt="ASUS Gaming Monitor">
+                    <p>ASUS Gaming Monitor</p>
+                </div>
+                <div class="monitor-item"
+                    onclick="openProductForm('Acer Predator', 'acerpredator.webp', 'High-refresh-rate gaming monitor', ['ASUS Gaming Monitor', 'Dell Ultrasharp', 'Samsung Odyssey G9', 'LG UltraGear'])">
+                    <img src="acerpredator.webp" alt="Acer Predator">
+                    <p>Acer Predator</p>
+                </div>
+                <div class="monitor-item"
+                    onclick="openProductForm('Dell Ultrasharp', 'dellultrasharp.png', 'Ultra HD monitor with crisp visuals', ['ASUS Gaming Monitor', 'Acer Predator', 'LG UltraGear', 'Samsung Odyssey G9'])">
+                    <img src="dellultrasharp.png" alt="Dell Ultrasharp">
+                    <p>Dell Ultrasharp</p>
+                </div>
+                <div class="monitor-item"
+                    onclick="openProductForm('LG UltraGear', 'lgultragear.png', 'Fast refresh-rate monitor for smooth performance', ['ASUS Gaming Monitor', 'Acer Predator', 'Dell Ultrasharp', 'Samsung Odyssey G9'])">
+                    <img src="lgultragear.png" alt="LG UltraGear">
+                    <p>LG UltraGear</p>
+                </div>
+                <div class="monitor-item"
+                    onclick="openProductForm('Samsung Odyssey G9', 'samsungg9.webp', 'Ultra-wide gaming monitor with immersive experience', ['ASUS Gaming Monitor', 'Acer Predator', 'Dell Ultrasharp', 'LG UltraGear'])">
+                    <img src="samsungg9.webp" alt="Samsung Odyssey G9">
+                    <p>Samsung Odyssey G9</p>
+                </div>
+            </div>
+        </section>
+
+
+
+
+    </section>
+
+
+
+    <script src="script.js"></script>
+    <script src="search.js"></script>
+</body>
+
+</html>

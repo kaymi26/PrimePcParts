@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Product Details</title>
+    <link rel="stylesheet" href="form.css">
+    <script defer src="script.js"></script>
+</head>
+
+<body>
+    <div class="form-container">
+        <button class="back-button" onclick="goBack()">← Back to Home</button> <!-- Back Button -->
+        <h2>Product Details</h2>
+
+        <div class="product-info">
+            <img id="productImg" src="" alt="Product Image">
+            <h3 id="productName"></h3>
+            <p id="productDescription"></p>
+            <span id="hardcodedDescription">Loading...</span>
+
+            <!-- Hardcoded Prices for Each Product -->
+            <p id="productPrice"><strong>Price:</strong>
+                <span id="hardcodedPrice">
+                    <script>
+                        // Define hardcoded prices for each product
+                        const productPrices = {
+                            "Intel Core i9": "₱25,000",
+                            "Intel Core i7": "₱20,000",
+                            "Intel Core i5": "₱15,000",
+                            "AMD Ryzen 9": "₱27,000",
+                            "Apple M3": "₱30,000",
+
+                            "Nvidia RTX 4090": "₱45,000",
+                            "AMD RX 7900": "₱38,000",
+                            "Intel Arc GPU": "₱35,000",
+                            "AMD RX 7800 XT": "₱30,000",
+                            "Nvidia RTX 4080": "₱40,000",
+
+                            "ASUS ROG Motherboard": "₱12,000",
+                            "MSI Gaming Motherboard": "₱12,000",
+                            "Gigabyte Motherboard": "₱9,000",
+                            "ASRock X670E Taichi": "₱7,000",
+                            "EVGA Z690 Dark": "₱15,000",
+
+                            "ASUS Gaming Monitor": "₱13,000",
+                            "Acer Predator": "₱12,000",
+                            "Dell Ultrasharp": "₱13,000",
+                            "LG UltraGear": "₱13,000",
+                            "Samsung Odyssey G9": "₱15,000",
+
+                            "Exclusive Offer 50% off": "₱29,000",
+                            "Limited Deal, BUY NOW": "₱6,000",
+                            "60% OFF NOW": "₱7,000"
+                        };
+
+                        const productDescriptions = {
+                            "Intel Core i9": "High-performance CPU designed for gaming and heavy workloads.",
+                            "Intel Core i7": "A fast and efficient processor for general use and gaming.",
+                            "Intel Core i5": "A reliable mid-range CPU for everyday computing tasks.",
+                            "AMD Ryzen 9": "A powerful gaming processor with excellent multi-threaded performance.",
+                            "Apple M3": "Advanced Apple silicon for seamless performance and battery efficiency.",
+
+                            "Nvidia RTX 4090": "The ultimate GPU delivering unmatched graphics power.",
+                            "AMD RX 7900": "High-performance graphics card optimized for smooth gaming.",
+                            "Intel Arc GPU": "Intel's newest GPU for gaming and creative work.",
+                            "AMD RX 7800 XT": "Balanced performance for gaming and workstation tasks.",
+                            "Nvidia RTX 4080": "Premium graphics card for high-end gaming and rendering.",
+
+                            "ASUS ROG Motherboard": "A high-end motherboard built for gaming enthusiasts.",
+                            "MSI Gaming Motherboard": "Reliable gaming motherboard for stability and speed.",
+                            "Gigabyte Motherboard": "A solid choice for performance and connectivity.",
+                            "ASRock X670E Taichi": "Advanced motherboard for extreme overclocking.",
+                            "EVGA Z690 Dark": "A powerhouse motherboard for gamers and professionals.",
+
+                            "ASUS Gaming Monitor": "High refresh rate gaming display with vivid colors.",
+                            "Acer Predator": "Top-tier gaming monitor with fast response times.",
+                            "Dell Ultrasharp": "Professional display with precise color accuracy.",
+                            "LG UltraGear": "Ultra-fast gaming monitor with immersive visuals.",
+                            "Samsung Odyssey G9": "Curved ultra-wide monitor for stunning immersion.",
+
+                            "Exclusive Offer 50% off": "Ultimate graphics power for high-performance gaming and rendering.",
+                            "Limited Deal, BUY NOW": "Reliable mid-range processor with solid performance for everyday computing and gaming.",
+                            "60% OFF NOW": "High refresh rate display optimized for smooth and immersive gameplay."
+                        };
+
+                        // Get the product name from the URL
+                        const urlParams = new URLSearchParams(window.location.search);
+                        const selectedProduct = urlParams.get('product');
+
+                        // Set the correct hardcoded price and description
+                        document.getElementById("hardcodedPrice").innerText = productPrices[selectedProduct] || "Price not available";
+                        document.getElementById("hardcodedDescription").innerText = productDescriptions[selectedProduct] || "Description not available.";
+                    </script>
+                </span>
+            </p>
+        </div>
+
+
+
+        <form>
+            <label for="quantity">Quantity:</label>
+           <input type="number" id="quantity" name="quantity" min="1" required value="1">
+            <button type="button" onclick="addToCart()">Add to Cart</button>
+        </form>
+
+        <h3>Related Products</h3>
+        <div id="relatedProducts"></div>
+    </div>
+
+    <h3>Related Offers</h3>
+    <div id="relatedAds"></div>
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: black;
+    margin: 0;
+    padding: 20px;
+}
+
+.cart-container {
+    max-width: 800px;
+    height: auto;
+    margin: auto;
+    background: wheat;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.cart-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    border-bottom: 1px solid #ddd;
+    padding: 10px;
+}
+
+.cart-img {
+    width: 80px; /* Adjust size */
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+
+.cart-details {
+    flex-grow: 1;
+}
+
+.cart-title {
+    font-weight: bold;
+}
+
+.cart-price {
+    color: #ff6600;
+}
+
+.quantity {
+    width: 50px;
+    padding: 5px;
+}
+
+.remove-btn {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+}
+
+.checkout-section {
+    text-align: center;
+    margin-top: 20px;
+}
+
+#checkout-btn {
+    background: #ff6600;
+    color: white;
+    padding: 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+
+/*BACK*/
+#back-btn {
+    background-color: #ddd;
+    color: black;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#back-btn:hover {
+    background-color: #bbb;
+}
+
+
+/*SUGGSTION*/

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="cart.css">
+    <script defer src="cart.js"></script>
+</head>
+
+<body>
+    <div class="cart-container">
+        <h2>🛒 My Cart</h2>
+        <div id="cart-items"></div> <!-- Cart items will be dynamically added here -->
+    </div>
+
+    <div class="checkout-section">
+        <h3>Checkout Summary</h3>
+        <button id="checkout-btn">Proceed to Checkout</button>
+        <button id="back-btn" onclick="goBack()">← Back to Home</button> <!-- Go Back Button -->
+    </div>
+</body>
+
+</html>
